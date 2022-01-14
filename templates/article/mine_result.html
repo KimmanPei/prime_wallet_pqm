@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} mining result {% endblock title %}
+{% block content %}
+
+<br>
+<h3 class = "text-center"> mining result</h3>
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card-footer">
+                    {% csrf_token %}
+                    <h2> Successful Mining of {{nblock}} blocks for address {{address}}</h2>
+                    <div class="card-footer">
+                    <a href='{% url "article:article_welcome" %}' class="btn btn-link">back to main page</a>
+                    </div>
+
+            </div>
+        </div>
+
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geojzmhqs5j30lp0k019b.jpg" alt = "mine" style="max-width:15%; border-radius: 20px">
+    </div>
+
+    </div>
+</div>
+
+{% endblock content %}

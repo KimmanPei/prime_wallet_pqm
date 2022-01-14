@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Log in {% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form method="post" action="http://127.0.0.1:8000/userprofile/login/">
+                {% csrf_token %}
+                <!-- 账号 -->
+                <div class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <!-- 密码 -->
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+            <div style="color:red">{{ error }}</div>
+        </div>
+        <div class="col-12">
+    <br>
+    <h5>Want to sign up？</h5>
+    <h5>Click<a href='{% url "userprofile:register" %}'>&nbsp Sign up &nbsp</a>to join us！</h5>
+    <br>
+    <form method="post" action=".">
+        ...
+    </form>
+</div>
+    </div>
+</div>
+{% endblock content %}

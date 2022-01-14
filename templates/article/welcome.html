@@ -1,0 +1,89 @@
+<!-- templates/article/list.html -->
+
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    Welcome to Challet
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+<br>
+<h3 class = "text-center"> Welcome &nbsp to &nbsp Challet &nbsp ^ ^</h3>
+<br>
+<br>
+
+<!-- 定义放置文章标题的div容器 -->
+<div class="container">
+    <div class="row mt-2">
+
+
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h5 class="card-body text-center">账户管理</h5>
+
+                <p>manage all your accounts</p>
+
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_list" %}' class="btn btn-link">account management</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h5 class="card-body text-center">交易记录</h5>
+
+                <p>record your transaction records</p>
+
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_txrecords" %}' class="btn btn-link">transaction records</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h4 class="card-body text-center">转账</h4>
+                <div class="card-header">
+                    <p class="card-text">transfer</p>
+                </div>
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_transfer" %}' class="btn btn-link">transfer</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h4 class="card-body text-center">挖矿</h4>
+                <div class="card-header">
+                    <p class="card-text">Mine</p>
+                </div>
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_transfer" %}' class="btn btn-link">mine</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

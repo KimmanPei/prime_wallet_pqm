@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Transaction Records {% endblock title %}
+{% block content %}
+
+<br>
+<h3 class = "text-center"> Transaction &nbsp records</h3>
+<br>
+
+
+<div class="container text-center">
+
+    <h5 class = "text-left"> Latest 3 tx records: </h5>
+    <style>
+    table#tb {margin:0 80%;}  
+    </style>
+    <table border="1" align = "center"  height= 90px>
+    <!--定义表头-->
+    <td width="120"> currency type </td>
+    <td width="500"> from address </td>
+    <td width="500"> txid </td>
+    <td width="200"> time </td>
+    <td width="60"> unit </td>
+    <td width="60"> value </td>
+
+    <!--行单元格-->
+        {% for field in tx_list %}
+            <tr>
+            <td width="120"> {{field.type}} </td>
+            <td width="500"> {{field.from_address}} </td>
+            <td width="500"> {{field.txid}}</td>
+            <td width="200"> {{field.time}} </td>
+            <td width="60"> {{field.unit}} </td>
+            <td width="60"> {{field.value}} </td>
+            </tr>
+    {% endfor %}
+
+
+    </table>
+
+
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4 class="text-left">for more records:</h4>
+        <p> </p>
+        <h5 class="text-left">
+            &nbsp &nbsp &nbsp
+            <a href='{% url "article:article_btctx" %}'> Bitcoin </a>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <a href='{% url "article:article_ethtx" %}'> Ether </a>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <a href='{% url "article:article_ltctx" %}'> Litecoin </a>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <a href='{% url "article:article_bchtx" %}'> Bitcoin cash </a>
+        </h5>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geook084pxj30v90u0tdf.jpg" alt = "mine" style="max-width:15%; border-radius: 20px">
+    </div>
+
+</div>
+
+{% endblock content %}

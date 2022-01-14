@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Bitcoin Cash Accounts Management {% endblock title %}
+{% block content %}
+
+<br>
+<h3 class = "text-center"> Bitcoin Cash &nbsp accounts </h3>
+<br>
+
+
+<div class="container text-center">
+
+
+    <style>
+    table#tb {margin:0 80%;}  
+    </style>
+    <table border="1" align = "center"  height= 90px>
+    <!--定义表头-->
+    <th>
+    <td width="600"> address </td>
+    <td width="100"> unit </td>
+    <td width="500"> balance </td>
+    </th>
+
+    <!--行单元格-->
+           {% for field in AV_list %}
+            <tr>
+            <td width="600"> {{field.id}} </td>
+            <td width="600"> {{field.address}} </td>
+            <td width="600"> BCH </td>
+            <td width="100"> {{field.balance}} </td>
+            </tr>
+    {% endfor %}
+
+
+
+    </table>
+
+
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="/article/article-bchat/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="add account">
+        </form>
+        <h5 class="text-left"><a href='{% url "article:article_list" %}'>all your accounts...</a></h5>
+        <br>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geooybtgirj318g0tonpd.jpg" alt = "mine" style="max-width:15%; border-radius: 20px">
+    </div>
+
+</div>
+
+{% endblock content %}

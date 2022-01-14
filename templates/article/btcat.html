@@ -1,0 +1,145 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Bitcoin Accounts Management {% endblock title %}
+{% block content %}
+
+<br>
+<h3 class = "text-center"> Bitcoin &nbsp accounts </h3>
+<br>
+
+
+<div class="container text-center">
+
+
+    <style>
+    table#tb {margin:0 80%;}  
+    </style>
+    <table border="1" align = "center"  height= 90px>
+    <!--定义表头-->
+    <th>
+    <td width="600"> address </td>
+    <td width="100"> unit </td>
+    <td width="500"> balance </td>
+    </th>
+    <!--行单元格-->
+        {% for field in AV_list %}
+            <tr>
+            <td width="600"> {{field.id}} </td>
+            <td width="600"> {{field.address}} </td>
+            <td width="600"> BTC </td>
+            <td width="100"> {{field.balance}} </td>
+            </tr>
+    {% endfor %}
+
+
+    </table>
+
+    <br>
+    <br>
+
+   <input class="button border-green button-little" type="button" onclick="javasrcipt:ShowDiv('MyDiv','fade')" value="add address">
+   <!--弹出层时背景层DIV---start-->
+<div id="fade" class="black_overlay"></div>
+<div id="MyDiv" class="white_content">
+    <div style="text-align: right; cursor: default; margin-top:10px;margin-bottom:10px;">
+        <span style="font-size: 16px; margin-right: 17px; color: #56BE2D; font-weight: 600;cursor:pointer;"  onclick="javascript:CloseDiv2()">close</span>
+    </div>
+    <pr>Which type address do you want to get? special or general?</pr>
+    <!HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3); margin-top: 39px;" width="90%" color=#ddd SIZE=2>
+    <div style="margin-bottom: 23px; margin-top: 23px; margin-left: 10%;margin-right:10%;">
+        <!input type="button" class="greenbutton2" style="width: 123px;margin-left: 30px;" onclick="javascript:GetSpecialAddr()" value="special" style="width: 123px; margin-left: 20%; ">
+        <form action="/article/article-btcat/" method="post">
+            <input type="submit" name="addr_type" value="special" style="width: 80px; margin-left: 20%; margin-right:20px">
+            <input type="submit" name="addr_type" value="general" style="width: 80px; margin-right:10%">
+            {% csrf_token %}
+        </form>
+        </div>
+</div>
+<!--弹出层时背景层DIV---end-->
+<script>
+    //弹框js部分 start
+    function ShowDiv(show_div,bg_div){
+        var scrollHeight = document.body.scrollHeight; //文档高度
+        document.getElementById(bg_div).style.height=scrollHeight+'px';
+
+        document.getElementById(show_div).style.display='block';
+        document.getElementById(bg_div).style.display='block';
+    };
+    //关闭弹出层
+    function CloseDiv(show_div,bg_div)
+    {
+        document.getElementById("label").value = '';
+        document.getElementById(show_div).style.display='none';
+        document.getElementById(bg_div).style.display='none';
+    };
+    //关闭弹出层
+    function CloseDiv2()
+    {
+        document.getElementById("MyDiv").style.display='none';
+        document.getElementById("fade").style.display='none';
+    };
+    function GetSpecialAddr()
+    {
+
+    }
+</script>
+
+
+<style>
+/* ===================================弹框css部分 start========================================= */
+    .black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.50;
+    filter: alpha(opacity=50);
+}
+.white_content {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 36%;
+    width: 33%;
+    border: 2px solid #d3d3d3;
+    background-color: white;
+    z-index: 1002;
+    /* overflow: auto; */
+}
+.white_content_small {
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    height: 50%;
+    border: 16px solid lightblue;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
+}
+/* ===================================弹框css部分 end ========================================= */
+</style>
+
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h5 class="text-left"><a href='{% url "article:article_list" %}'>return to management page</a></h5>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geooybtgirj318g0tonpd.jpg" alt = "mine" style="max-width:15%; border-radius: 20px">
+    </div>
+
+</div>
+{% endblock content %}

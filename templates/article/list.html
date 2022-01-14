@@ -1,0 +1,102 @@
+<!-- templates/article/list.html -->
+
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    Account list
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+<!-- 定义放置文章标题的div容器 -->
+<div class="container">
+    <div class="row mt-2">
+
+        <!-- 文章内容 -->
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h4 class="card-body">Bitcoin</h4>
+                <!-- 摘要 -->
+                <div class="card-header">
+                    <p class="card-text">you have {{num_add.0}} address</p>
+                </div>
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_btcat" %}' class="btn btn-link">Detailed Information</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章内容 -->
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h4 class="card-body">Ether</h4>
+                <!-- 摘要 -->
+                <div class="card-header">
+                    <p class="card-text">you have {{num_add.1}} address</p>
+                </div>
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_ethat" %}' class="btn btn-link">Detailed Information</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章内容 -->
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h4 class="card-body">Bitcoin Cash</h4>
+                <!-- 摘要 -->
+                <div class="card-header">
+                    <p class="card-text">you have {{num_add.2}} address</p>
+                </div>
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_bchat" %}' class="btn btn-link">Detailed Information</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章内容 -->
+        <div class="col-6 mb-4 text-center">
+        <!-- 卡片容器 -->
+            <div class="card h-100">
+                <!-- 标题 -->
+                <h4 class="card-body">LiteCoin</h4>
+                <!-- 摘要 -->
+                <div class="card-header">
+                    <p class="card-text">you have {{num_add.3}} address</p>
+                </div>
+                <!-- 注脚 -->
+                <div class="card-footer">
+                    <a href='{% url "article:article_ltcat" %}' class="btn btn-link">Detailed Information</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geooybtgirj318g0tonpd.jpg" alt = "mine" style="max-width:25%; border-radius: 20px">
+    </div>
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Transaction Records {% endblock title %}
+{% block content %}
+
+<br>
+<h3 class = "text-center"> Transaction &nbsp records</h3>
+<br>
+
+
+<div class="container text-center">
+
+    <style>
+    table#tb {margin:0 100%;}  
+    </style>
+
+    <table border="1" align = "center" width="600" height= 90px>
+
+    <!--定义表头-->
+    <th>
+    <td width="600"> from address </td>
+    <td width="600"> to address </td>
+    <td width="600"> time </td>
+    <td width="600"> value </td>
+    </th>
+
+    <!--行单元格-->
+    <tr>
+    <td width="600"> (eth)0x04ff2e17fafd72f34bdf288b3bea2b63f59dde12 </td>
+    <td width="600"> (eth)0x10cb03bbf1982c8cd429d11efc6f9d79d087d498 </td>
+    <td width="600"> (eth)0x685a1ae66c66e042922425be6908553b1465267a </td>
+    <td width="600"> (ltc)QYBBH2hc84zMJhS7srVcZTSfNMgJX6TThj </td>
+    <td width="600"> (ltc)QYAumLVwR9GGLWprBd5ud6zmHKf4jm2Ssd </td>
+    <td width="600"> (ltc)QY94vysZiQuTexH3w22QehSxsFgFBgwxBb </td>
+    <td width="600"> (btc)2Mtj8FgQqmGx6DdhhZexVv9nWV3jZtCJeh3 </td>
+    <td width="600"> (btc)2N4TSZDEF4r7GQ1k6UoVaVDwiUKAm8WoPQn </td>
+    <td width="600"> (btc)2N8YKszrNm92vbyBU4weXj5CKLp53zqrUqc </td>  
+    </tr>
+
+
+    </table>
+
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geojzmhqs5j30lp0k019b.jpg" alt = "mine" style="max-width:10%; border-radius: 20px">
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Transfer {% endblock title %}
+{% block content %}
+
+<br>
+<h3 class = "text-center"> Receive &nbsp Messages</h3>
+ <div style="color:red; text-align:center" >{{ error }}</div>
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form method="post" action="/article/article-receive_text/">
+                {% csrf_token %}
+
+                <!-- 转账备注 -->
+                <div class="form-group">
+                    <label for="note"> text messages: </label>
+                    <!-- 文本区域 -->
+
+                    {%if receive_message %}
+                        <textarea type="text" class="form-control" id="note" name="note" rows="12">{% for line in messages %}{{ line }}{% endfor %}</textarea>
+                    {% else %}
+                    <!-- 文本区域 -->
+                    <textarea type="text" class="form-control" id="note" name="note" rows="12"></textarea>
+                    {% endif %}
+                </div>
+
+                <br>
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-link">Exit!</button>
+            </form>
+             <div style="color:red">{{ error }}</div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

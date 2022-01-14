@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "address":"this is a eth address from json",
+        "balance":1234.5,
+        "usdBalance":5678.9
+    },
+    {
+        "id":1,
+        "address":"bc1qppsntrhcfe8m48dszxzjq9tfdd4ccpua0hqej2",
+        "balance":1234.5,
+        "usdBalance":5678.9
+    },
+    {
+        "id":2,
+        "address":"021qppsntrhcfe8m48dszxzjq9tfdd4ccpua0hqej2",
+        "balance":1234.5,
+        "usdBalance":5678.9
+    },
+    {
+        "id":3,
+        "address":"031qppsntrhcfe8m48dszxzjq9tfdd4ccpua0hqej2",
+        "balance":1234.5,
+        "usdBalance":5678.9
+    },
+    {
+        "id":4,
+        "address":"041qppsntrhcfe8m48dszxzjq9tfdd4ccpua0hqej2",
+        "balance":12.5,
+        "usdBalance":5718
+    }
+]

@@ -1,0 +1,135 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Transfer {% endblock title %}
+{% block content %}
+<br>
+<h3 class = "text-center"> Transfer &nbsp Page</h3>
+ <div style="color:red; text-align:center" >{{ error }}</div>
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form enctype="multipart/form-data" action="/article/article-sendfile/" method="post">
+                {% csrf_token %}
+
+
+                <!-- 选择币种 -->
+                <div class="form-group">
+                    <label for="type">your currency :</label>
+                    <select class="form-control"
+                            id="type"
+                            name="type"
+                    >
+                        <option value="none">Please choose a currency..</option>
+                        <option value="ETH">ETH</option>
+                        <option value="BTC">BTC</option>
+                        <option value="BCH">BCH</option>
+                        <option value="LTC">LTC</option>
+
+                    </select>
+                </div>
+
+                <br>
+                <!-- 转账地址 -->
+                <label for="from_address">from address: </label>
+                <div class="form-group col-md-8">
+                    <input type="text" class="form-control" id ="from_address" name="from_address" required>
+                </div>
+
+
+                <br>
+                <!-- 收钱地址 -->
+                <label for="to_address">to address: </label>
+                <div class="form-group col-md-8">
+                    <input type="text" class="form-control" id="to_address" name="to_address" required>
+                </div>
+
+                <br>
+                <!-- 选择币种 -->
+                <div class="form-group">
+                    <label for="column">choose unit</label>
+                    <select class="form-control"
+                            name="column"
+                    >
+                        <option value="none">Please choose a unit..</option>
+                        <option value="none">Wei (ETH)</option>
+                        <option value="none">Ether (ETH)</option>
+                        <option value="none">SAT (BTC)</option>
+                        <option value="none">Btc (BTC)</option>
+                        <option value="none">Ltc (LTC)</option>
+                        <option value="none">Litoshi (LTC)</option>
+
+                    </select>
+                </div>
+                <br>
+                <label for="value">value: </label>
+                <div class="form-group col-md-2">
+                    <input type="text" class="form-control" id="value" name="value" required>
+                </div>
+                <br>
+
+                <!-- 上传文件 -->
+                <div class="form-group">
+                    <label for="value">choose file: </label>
+                    <input type=file  id=browsefile  name="user_file" style="visibility:hidden" onchange=filepath.value=this.value >
+                    <!input type=file  id=browsefile  name="user_file"  >
+                    <div class="form-group col-md-4">
+                    <div class="form-inline row" >
+                    <input type="text" id=filepath name="filepath" class="form-control" >&nbsp;<input type=button id=filebutton value="browser" class="btn btn-link" onclick="browsefile.click()">
+                    </div>
+                    </div>
+                    <br>
+                    <!---input type="submit" value="upload"/--->
+                    <button type="submit" class="btn btn-link">Confirm!</button>
+                </div>
+
+                <br>
+            </form>
+             <div style="color:red">{{ error }}</div>
+        </div>
+<style>
+    .file {
+			position: relative;
+			display: inline-block;
+			background: #FFFFFF;
+			/*border: 1px solid #99D3F5;*/
+			border: 1px solid #808080;
+			border-radius: 4px;
+			padding: 4px 12px;
+			overflow: hidden;
+			color: #1E88C7;
+			text-decoration: none;
+			text-indent: 0;
+			line-height: 20px;
+		}
+		.file input {
+			position: absolute;
+			font-size: 100px;
+			right: 0;
+			top: 0;
+			opacity: 0;
+		}
+		.file:hover {
+			/*background: #AADFFD;*/
+			background: #FFFFFF;
+			/*border-color: #78C3F3;*/
+			border-color: #808080;
+			color: #004974;
+			text-decoration: none;
+		}
+</style>
+    <div class="col-12 text-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geook084pxj30v90u0tdf.jpg" alt = "mine" style="max-width:15%; border-radius: 20px">
+    </div>
+
+    </div>
+</div>
+
+{% endblock content %}

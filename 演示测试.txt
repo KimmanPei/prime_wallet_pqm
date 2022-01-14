@@ -1,0 +1,11 @@
+BTC
+2MvgxRLqAq7hVHWChc2DjJ5hdKmRnSMEkYY
+2NBZYdFQuUKjDopx9W5JznGHCzBBWJfReew
+
+BCH
+bchreg:qrszk73umm8224gx9eh5r4adervgveus3ykdx7faf9
+bchreg:qrsl3r69kwrq3e64f2fma4vm43l6eu5lyshjy7a237
+
+LTC
+QTtRmAbCvP6CjW3K6MvHpwjYBT6sdVtuaS
+Qe4xGVL8Bc6uhtogxHtPfnYuMiiuetTz3R
